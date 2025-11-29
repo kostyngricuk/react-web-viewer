@@ -6,17 +6,20 @@
   "files": [
     "dist"
   ],
-  "module": "./dist/index.es.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^19.2.0",
